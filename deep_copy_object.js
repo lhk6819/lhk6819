@@ -22,7 +22,6 @@ function CopyArrayandObject(object) {
   }
   
   // 3. 재귀함수를 이용하여 primitive와 reference형 자료를 분류하여 복사함.
-  console.log(Object.keys(object));
   for (let key of Object.keys(object)) {
     ret[key] = CopyArrayandObject(object[key]);
   }

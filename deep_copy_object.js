@@ -14,14 +14,9 @@ function CopyArrayandObject(object) {
   }
 
   // 2. 객체인지 배열인지 판단하여 새로운 Array나 Object를 선언함.
-  let ret;
-  if (Array.isArray(object) === true) {
-    ret = [];
-  } else {
-    ret = {};
-  }
+  const ret = if(Array.isArray(object)) ? [] : {};
   
-  // 3. 재귀함수를 이용하여 primitive와 reference형 자료를 분류하여 복사함.
+  // 3. 재귀함수를 이용하여 데이터를 분류하여 복사함.
   for (let key of Object.keys(object)) {
     ret[key] = CopyArrayandObject(object[key]);
   }
